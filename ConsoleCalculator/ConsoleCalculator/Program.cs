@@ -43,8 +43,15 @@ namespace ConsoleCalculator
                     mathout = final.ToString();
                     break;
                 case "/":
-                    final = A / B;
-                    mathout = final.ToString();
+                    try
+                    {
+                        final = A / B;
+                        mathout = final.ToString();
+                    }
+                    catch(DivideByZeroException)
+                    {
+                        mathout = "Waoh! You cannot devide by 0";
+                    }
                     break;
                 case "%":
                     final = A % B;
