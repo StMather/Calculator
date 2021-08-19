@@ -11,24 +11,8 @@ namespace ConsoleCalculator
             String sign = "";
             Console.WriteLine("Welcome to the Calculator");
             Console.WriteLine("Please enter a number!");
-            try
-            {
-                first = Int32.Parse(Console.ReadLine());
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"That is not a number!");
-                //if A is not a number ask again(recursion?)
-            }
-            try
-            {
-                second = Int32.Parse(Console.ReadLine());
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"That is not a number!");
-                //if B is not a number ask again(recursion?)
-            }
+            first = GetInt();
+            second = GetInt();
             Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*/");
             sign = Console.ReadLine();
 
@@ -72,6 +56,21 @@ namespace ConsoleCalculator
             }
             return mathout;
             
+        }
+        public static int GetInt()
+        {
+            int intOut = 0;
+            try
+            {
+                intOut = Int32.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"That is not a number!");
+                intOut = GetInt();
+                //if A is not a number ask again(recursion?)
+            }
+            return intOut;
         }
     }
 }
