@@ -32,12 +32,12 @@ namespace ConsoleCalculator
             Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*/");
             sign = Console.ReadLine();
 
-            Console.WriteLine(Program.doMath(first, second, sign));
+            Console.WriteLine(DoMath(first, second, sign));
 
            
             //do math (switch)and print
         }
-        public String doMath(int A, int B, String signin)
+        public static String DoMath(int A, int B, String signin)
         {
             String mathout = "";
             switch (signin)
