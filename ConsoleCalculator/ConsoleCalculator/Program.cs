@@ -23,7 +23,7 @@ namespace ConsoleCalculator
                 Console.Write($"{first}{sign}{second}=");
                 Console.WriteLine(DoMath(first, second, sign));
                 Console.Write("Run again? Y/N");
-                RunAgain(Console.ReadLine());
+                again = RunAgain(Console.ReadLine());
             } while (again);
 
         }
@@ -81,6 +81,11 @@ namespace ConsoleCalculator
                 Console.WriteLine($"That is not a number!");
                 intOut = GetInt();
                 //if A is not a number ask again(recursion?)
+            }
+            catch(System.OverflowException)
+            {
+                Console.WriteLine($"Number out of bounds!");
+                intOut = GetInt();
             }
             return intOut;
         }
