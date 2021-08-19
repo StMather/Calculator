@@ -40,23 +40,29 @@ namespace ConsoleCalculator
         public static String DoMath(int A, int B, String signin)
         {
             String mathout = "";
+            int final = 0;
             switch (signin)
             {
                 case "+":
-                    //do math +
+                    final = A + B;
+                    mathout = final.ToString();
                     break;
                 case "-":
-                    //do math -
+                    final = A - B;
+                    mathout = final.ToString();
                     break;
                 case "x:":
                 case "*":
-                    //do math *
+                    final = A * B;
+                    mathout = final.ToString();
                     break;
                 case "/":
-                    //do math /
+                    final = A / B;
+                    mathout = final.ToString();
                     break;
                 case "%":
-                    //do math %
+                    final = A % B;
+                    mathout = final.ToString();
                     break;
                 default:
                     Console.WriteLine("Please use + - * x / %");
