@@ -32,6 +32,7 @@ namespace ConsoleCalculator
             Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*/");
             sign = Console.ReadLine();
 
+            Console.Write($"{first}{sign}{second}=");
             Console.WriteLine(DoMath(first, second, sign));
 
            
