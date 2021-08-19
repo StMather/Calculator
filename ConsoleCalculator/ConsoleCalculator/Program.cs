@@ -19,7 +19,7 @@ namespace ConsoleCalculator
                 Console.WriteLine("Please enter another number!");
                 second = GetInt();
 
-                Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*x/%");
+                Console.WriteLine($"You have chose {first} and {second} what would you like to do with them? +-*x/%");
                 sign = Console.ReadLine();
 
                 
