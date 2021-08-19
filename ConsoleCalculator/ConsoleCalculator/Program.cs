@@ -17,7 +17,7 @@ namespace ConsoleCalculator
                 first = GetInt();
                 Console.WriteLine("Please enter another number!");
                 second = GetInt();
-                Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*/");
+                Console.WriteLine($"You have chose: {first} and {second} what would you like to do with them? +-*x/%");
                 sign = Console.ReadLine();
 
                 Console.Write($"{first}{sign}{second}=");
@@ -42,6 +42,7 @@ namespace ConsoleCalculator
                     mathout = final.ToString();
                     break;
                 case "x:":
+                case "X":
                 case "*":
                     final = A * B;
                     mathout = final.ToString();
@@ -78,13 +79,13 @@ namespace ConsoleCalculator
             }
             catch (FormatException)
             {
-                Console.WriteLine($"That is not a number!");
+                Console.Write($"That is not a number! Please enter a number:");
                 intOut = GetInt();
                 //if A is not a number ask again(recursion?)
             }
             catch(System.OverflowException)
             {
-                Console.WriteLine($"Number out of bounds!");
+                Console.Write($"Number out of bounds! Please enter a number:");
                 intOut = GetInt();
             }
             return intOut;
