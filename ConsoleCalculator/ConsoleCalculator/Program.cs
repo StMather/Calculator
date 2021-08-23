@@ -59,7 +59,7 @@ namespace ConsoleCalculator
                     }
                     catch(DivideByZeroException)
                     {
-                        mathout = "Waoh! You cannot devide by 0";
+                        mathout = "\n Waoh! You cannot devide by 0";
                     }
                     break;
                 case "%":
@@ -67,14 +67,14 @@ namespace ConsoleCalculator
                     mathout = final.ToString();
                     break;
                 default:
-                    Console.WriteLine("Please use + - * x / %");
-                    //Ask again (Recursion??)
+                    Console.WriteLine("\n Please use + - * x / %");
+
                     break;
             }
             return mathout;
             
         }
-        public static int GetInt()
+        public static int GetInt()//get integer input from user with error checking for number that is too bit and letters.
         {
             int intOut = 0;
             try
@@ -85,7 +85,6 @@ namespace ConsoleCalculator
             {
                 Console.Write($"That is not a number! Please enter a number:");
                 intOut = GetInt();
-                //if A is not a number ask again(recursion?)
             }
             catch(System.OverflowException)
             {
